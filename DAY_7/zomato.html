@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;/*page size*/
+        
+        }
+      .container{
+        width: 80vw;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color:aliceblue;
+        background-image: url(zomatobgm.jpg);
+        background-position: center;
+        background-size:cover;
+      }
+    form{
+        display: flex;
+        padding-left:5px;
+        background-color: white;
+        border-radius:6px;
+        height:40px;
+        width: fit-content;
+        display:flex;
+        align-items: center;
+
+      }
+    div,select{
+        margin-top:5px;
+    }
+    .section1,.section0{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:2rem;
+        font-style: italic;
+      
+    }
+    .input
+    {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        width:600px;
+        background-color: white;
+        text-align: center;
+    }
+   input{
+    width:500px;
+    border: none;
+
+   }
+   .city
+   {
+    border: none;
+    width: 200px;
+
+
+   }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="section0">ZOMATO</div>
+    <div class="section1">Discover the best food & drink in Lucknow</div>
+    <div class="input">
+        <form>
+            <!-- <div><img src="locationtag.png"></div> -->
+             
+            <select name="location" class="city">
+                <option>Lucknow</option>
+                <option>Lucknow</option>
+                <option>Lucknow</option>
+                <option>Lucknow</option>
+            </select>
+            <!-- <div><img src="searchtag.png"</div> -->
+            <input type="search" placeholder="Search for a restarant,Cuisine or a dish">
+        </form>
+    </div>
+    </div>
+</body>
+</html>
