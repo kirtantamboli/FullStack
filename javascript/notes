@@ -1,0 +1,8 @@
+slice::
+in slice it does'nt work if in the starting and ending the ending is bigger eg(5,1)
+
+whereas ,in substring::
+if the ending is bigger then we will get the reverse output
+ 
+
+for time zone : epochconverter
