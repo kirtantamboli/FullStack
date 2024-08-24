@@ -3,14 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator to add , multiply, subtract, divide two numbers</title>
+    <title>Simple Calculator</title>
 </head>
 <body>
-    <h2>calculator to add , multiply, subtract, divide two numbers</h2>
-    <input type="number" id="userinput" placeholder="enter a number">
-    <button type="submit" onclick="checknumber()">checknumber</button>
-    <p id="result"></p>
-    <!-- link to external js -->
-    <script src="task4.js"></script> 
+    <h1>Simple Calculator</h1>
+    
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1" required>
+    <br><br>
+    
+    <label for="num2">Enter the second number:</label>
+    <input type="number" id="num2" required>
+    <br><br>
+    
+    <button onclick="performCalculations()">Calculate</button>
+    
+    <h2>Results:</h2>
+    <p id="sum"></p>
+    <p id="difference"></p>
+    <p id="product"></p>
+    <p id="quotient"></p>
+
+    <script>
+        function performCalculations() {
+            // Get the values from the input fields
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            
+            // Perform the operations
+            let sum = num1 + num2;
+            let difference = num1 - num2;
+            let product = num1 * num2;
+            let quotient = num1 / num2;
+            
+            // Display the results
+            document.getElementById("sum").textContent = "Sum: " + sum;
+            document.getElementById("difference").textContent = "Difference: " + difference;
+            document.getElementById("product").textContent = "Product: " + product;
+            document.getElementById("quotient").textContent = "Quotient: " + quotient;
+        }
+    </script>
 </body>
 </html>
