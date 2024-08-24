@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JOB TYPE</h1>
+    <label for="job_type">SELECT JOB TYPE :</label>
+    <select class="job_type" id="job_type">
+        <option value="GOVERMENT">GOVERMENT</option>
+        <option value="BUSINESS">BUSINESS</option>
+        <option value="PRIVATE">PRIVATE</option>
+    </select>
+    <button onclick="job_type()">Show Selected job type</button>
+    <p id="selectedjob"></p>
+
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1" required>
+    <br><br>
+
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1" required>
+    <br><br>
+
+    
+    <script>
+         function job_type(){
+            let selectedjob = document.getElementById("job_type").value;
+            document.getElementById("selectedjob").textContent = "You selected: " + selectedjob;
+            parseText(document.getElementById("job_type").value);
+        if(job_type==government){
+            let num = parseFloat(prompt("ENTER SALARY:"));
+            console.log(num); // This will log the number to the console
+                if(num >50000){
+                    console.log('YOU CAN APPLY FOR LOAN');
+                     }
+        else{
+            console.log('YOU CAN NOT APPLY FOR LOAN');
+        }
+
+       }
+    else if(job_type==business){
+        let num1 = parseFloat(prompt("ENTER YEARLY TURNOVER:"));
+        console.log(num1);
+            if(num1>2000000){
+                console.log('YOU CAN APPLY FOR LOAN');
+            }
+            else{
+                console.log('YOU CAN NOT APPLY FOR LOAN');
+            }
+    }
+    else if(job_type==private){
+        console.log('NO LOAN AVAILABLE FOR YOU');
+    }
+        }
+    </script>
+ 
+
+</body>
+</html>
