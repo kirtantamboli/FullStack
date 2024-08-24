@@ -1,0 +1,17 @@
+  /*transform css generator*/
+  ::selection{
+    color:red;
+    background-color:greenyellow;
+}
+p::first-line{
+    color: blue;
+}
+p::first-letter{
+    color: darkmagenta;
+}
+h1::before{
+    content: '🫶';
+}
+h1::after{
+    content: '🫶';
+}
