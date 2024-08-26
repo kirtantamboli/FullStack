@@ -181,8 +181,6 @@ const city3 = 'Mumbai'
 // const url1 = https:api.openweathermap.org/data/2.5/weather?q=${city1}&appid=${apikey}
 // const url2 = https:api.openweathermap.org/data/2.5/weather?q=${city2}&appid=${apikey}
 // const url3 = https:api.openweathermap.org/data/2.5/weather?q=${city3}&appid=${apikey rx b
-0
-
 const fetchWeatherData = async () => {
 
 const [res1,res2,res3] = await Promise.all([fetch(url1),fetch(url2),fetch(url3)])
