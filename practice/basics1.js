@@ -57,7 +57,7 @@ function step4(){
         console.log('step 2 is completed')
     },1000)
 }
-
+// lexical scoping
 // step1(()=>{
 //     step2(()=>{
 //         step3(()=>{
