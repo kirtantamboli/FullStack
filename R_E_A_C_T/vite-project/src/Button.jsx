@@ -1,5 +1,6 @@
 //rfce = for normal function component
-//rafce =  
+//rafce = for arrow function component
+//props = props are used to share data from parent component to child component 
 import React from 'react'
     function Button(props){
        console.log('props')
