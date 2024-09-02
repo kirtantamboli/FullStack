@@ -1,0 +1,8 @@
+body{
+    display: inline;
+    background-color: brown;
+}
+.container{
+    display:grid;
+    background-color: blue;
+}
