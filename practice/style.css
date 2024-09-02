@@ -1,0 +1,15 @@
+.container,.nav{
+    display: flex;
+    background-color:black;
+    gap:50px;
+    font-size:25px;
+    color: aliceblue;
+    height:50px;
+    align-items: center;
+}
+.nav{
+    margin-left: 380px;
+}
+.tag{
+    margin-left:80px;
+}
