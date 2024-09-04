@@ -1,3 +1,3 @@
 console.log('HELLO');
 //console.log(window);
-console.log(process);
+//console.log(process);
