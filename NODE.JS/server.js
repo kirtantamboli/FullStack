@@ -31,4 +31,4 @@ server.listen(3000, () => {
 
 // npm i nodemon -g --save-dev
 
-//methods
+//methods we can use to send different 
