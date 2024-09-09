@@ -14,3 +14,8 @@ app.listen(3000,()=>{
     console.log('server is running through express');
     
 })
+
+//task create an array of object of the userdata and send it via api which have url route 'gesture' to send the array of the object you can use res.json({
+//data :userdata
+//}) 
+// const userData = [{username : 'abc', age: 22},{username :'xyz',age : 23}]
