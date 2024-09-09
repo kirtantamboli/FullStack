@@ -34,6 +34,7 @@ server.listen(3000, () => {
 
 //methods we can use to send different 
 
+// note event module node js (observer pattern in the nodejs) ;
 const event = new EventEmitter() ;
 event.on('party',()=>{
   console.log('party started');
