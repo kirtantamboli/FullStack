@@ -74,5 +74,5 @@ event.on('sale',()=>{
   console.log('sale started');
   
 })
-
 event.emit('sale');
+
