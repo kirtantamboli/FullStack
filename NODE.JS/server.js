@@ -66,4 +66,13 @@ event.on('party', ()=>{
 })
 
 //NOTE we have emitted a event named party
-event.emit('party')
+event.emit('party');
+
+
+//new
+event.on('sale',()=>{
+  console.log('sale started');
+  
+})
+
+event.emit('sale');
