@@ -1,6 +1,7 @@
 const http = require('http');
 const path = require('path');
 const fs = require('fs');
+const { EventEmitter } = require('stream');
 const server = http.createServer((req, res) => {
   console.log(req.url);
   if (req.url === '/about') {
@@ -32,3 +33,11 @@ server.listen(3000, () => {
 // npm i nodemon -g --save-dev
 
 //methods we can use to send different 
+
+const event = new EventEmitter() ;
+event.on('party',()=>{
+  console.log('party started');
+  
+})
+
+//event.emit('party)
