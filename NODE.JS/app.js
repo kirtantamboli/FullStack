@@ -1,5 +1,6 @@
 //easiest way to make api through express
 const express = require('express');
+const product = require('express');
 
 const app = express();
 // console.log(app);
@@ -24,6 +25,29 @@ app.listen(3000,()=>{
 //accepts two params first is 'url for api' second is function
 
 app.get('/api/v1/getproduct',(req,res)=>{
-    res.send(product);
+    // res.send(product);
+    res.status(200).json({
+        length : Product.length,
+        data : product  
+    })
+    // res.status(200).send(product)
 })
 //we have t0 make collection to save apis
+api.get('./api/v1/singleproduct/:id',(req,res)=>{
+    req.params.id
+    console.log(req.params)
+    const id = parseInt(req.params)
+    console.log(id);
+    const filterProduct = product.filter((product)=>{
+        return product.id === id 
+    })
+    
+})
+    res.json({
+        data :filterProduct  
+    })
+
+app.listen(3000,()=>{
+    console.log("server is running");
+    
+})
