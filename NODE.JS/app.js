@@ -19,3 +19,11 @@ app.listen(3000,()=>{
 //data :userdata
 //}) 
 // const userData = [{username : 'abc', age: 22},{username :'xyz',age : 23}]
+
+//note read
+//accepts two params first is 'url for api' second is function
+
+app.get('/api/v1/getproduct',(req,res)=>{
+    res.send(product);
+})
+//we have t0 make collection to save apis
