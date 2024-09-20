@@ -1,9 +1,11 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
 import {z} from 'zod'
+import axios from 'axios'
+import { toast } from 'sonner'
 import {zodResolver} from '@hookform/resolvers/zod'
-const Signup = () => {
 
+const Signup = () => {
     const schema = z.object({
         name : z.string().min(1,"Name is Required").max(40,"name cannot exceed 40 characters"),
         email : z.string().email('email is required'),
@@ -14,8 +16,17 @@ const Signup = () => {
     const{register , formState:{errors} , handleSubmit} = useForm({
         resolver:zodResolver(schema)
     })
-    const onSubmit = (data) =>{
-        console.log(data);
+    console.log(errors);
+    
+    const onSubmit = async(data) =>{
+        try{
+            const res = await axios.post("http://localhost:3000/api/register",data);
+            toast.success("user registered successfully")
+        }   
+        catch(error){
+            console.log(error);
+            
+        }
     }
   return (
     <div>
