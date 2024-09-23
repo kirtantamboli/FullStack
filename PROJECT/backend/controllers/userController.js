@@ -38,6 +38,14 @@ exports.login = async (req,res)=>{
         if (!isPasswordMatch) {
             return res.status(400).send('Password do not Match')
         }
+
+        
+        //generate a token and send it to response so we can get in frontend
+        const token = jwt.sign({
+            id : user._id,
+            role : user.role,
+            name :user.name
+        },'this-is-a-string',{expiresIn : '30d'})
         res.status(200).json({
             message:"Login Successful"
         })
