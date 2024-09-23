@@ -1,5 +1,5 @@
 import React from 'react'
-import Signup from './PAGES/SIGNUP'
+import Signup from '/PAGES/SIGNUP'
 import { Routes, Route } from 'react-router-dom'
 import AuthForm from './pages/AuthForm'
 import { Toaster } from 'sonner'

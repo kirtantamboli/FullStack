@@ -36,6 +36,11 @@ const userSchema = new mongoose.Schema({
             message: 'Password must contain 1 Uppercase, 1 Lowercase, 1 Number & 1 Symbol',
         },
     },
+    role :{
+        type : String ,
+        enum : ['admin','user'],
+        default : 'admin'
+    }
 });
 
 userSchema.pre('save',async function(next){
