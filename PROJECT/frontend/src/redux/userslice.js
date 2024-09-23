@@ -21,12 +21,17 @@ const userSlice = createSlice({
     initialState,
     extraReducers :(builder)=>{
         //first pending
+        //handling api -- pending fulfilled rejected
         builder.addCase(register.pending,(state)=>{
             state.loading = true
-        })
-        builder.addCase(register.fulfilled,(state)=>{
+        }).addCase(register.fulfilled,(state)=>{
             state.loading = false
+        }).addCase(register.rejected,(state,action)=>{
+            console.log(action.payload);
+            state.error = action.payload
+            
         })
+
     }
 })
 
