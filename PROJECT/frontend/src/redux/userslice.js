@@ -18,7 +18,16 @@ const initialState ={
 
 const userSlice = createSlice({
     name : 'user',
-    initialState
+    initialState,
+    extraReducers :(builder)=>{
+        //first pending
+        builder.addCase(register.pending,(state)=>{
+            state.loading = true
+        })
+        builder.addCase(register.fulfilled,(state)=>{
+            state.loading = false
+        })
+    }
 })
 
 export default userSlice.reducer
