@@ -4,7 +4,10 @@ import {z} from 'zod'
 import axios from 'axios'
 import { toast } from 'sonner'
 import {zodResolver} from '@hookform/resolvers/zod'
+import { Register } from '../redux/userslice'
 
+function Signup(){
+    const dispatch = new data }
 const Signup = () => {
     const schema = z.object({
         name : z.string().min(1,"Name is Required").max(40,"name cannot exceed 40 characters"),
@@ -18,16 +21,18 @@ const Signup = () => {
     })
     console.log(errors);
     
-    const onSubmit = async(data) =>{
-        try{
-            const res = await axios.post("http://localhost:3000/api/register",data);
-            toast.success("user registered successfully")
-        }   
-        catch(error){
-            console.log(error);
+    const onSubmit = (data) =>{
+        dispatch(Register(data))
+    };
+    //     try{
+    //         const res = await axios.post("http://localhost:3000/api/register",data);
+    //         toast.success("user registered successfully")
+    //     }   
+    //     catch(error){
+    //         console.log(error);
             
-        }
-    }
+    //     }
+    // }
   return (
     <div>
         <form onSubmit={handleSubmit(onSubmit)} className='flex'>
