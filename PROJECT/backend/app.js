@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 const dbConnect = require('./db');
+const passport = require('passport')
 const PORT = 3000;
 const colors = require('colors');
+require('dotenv').config()
 const cors = require('cors')
+require('./config/passportConfig')
 app.use(cors())
+
+app.use(passport.initialize())
+app.use(passport.session())
 //NOTE fn to connect with the mongodb
 dbConnect();
 
@@ -13,7 +19,8 @@ app.use(express.json());
 
 //NOTE Routes middleware
 app.use('/api', require('./routes/userRoutes'));
-app.use('/api',require('./routes/categoryRoute'));
+app.use('/api',require('./routes/categoryRoutes'
+))
 
 //NOTE GLOBAL ROUTES HANDLER (middleware)
 app.use((req, res, next) => {
@@ -28,22 +35,4 @@ app.use((req, res, next) => {
 //listening on the server
 app.listen(PORT, () => {
   console.log(colors.yellow(`App is listening on the port:${PORT}`));
-});
-
-// const express = require('express') ;
-// const app = express() ;
-// const dbConnect = require('./db')
-// const colors  = require("colors");
-// const routes = require("./routes/userRoutes.js")
-// const PORT = 3000 ;
-
-// //NOTE fn to connect with the mongodb
-// dbConnect() ;
-
-// app.use(express.json());
-// app.use('/api',routes);
-
-// //listening on the server
-// app.listen(PORT,()=>{
-//     console.log(colors.america(`App is listening on the port:${PORT}`))
-// })
+})
