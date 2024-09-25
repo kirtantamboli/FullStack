@@ -6,7 +6,7 @@ const PORT = 3000;
 const colors = require('colors');
 require('dotenv').config()
 const cors = require('cors')
-require('./config/passportConfig')
+require('/config/passportConfig')
 app.use(cors())
 
 app.use(passport.initialize())

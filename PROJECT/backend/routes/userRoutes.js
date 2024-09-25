@@ -10,4 +10,4 @@ router.post('/login',userController.login);
 router.get('/auth/google',passport.authenticate('google',[{scope :['profile',email]}]))
 module.exports = router ;
 
-router.get('/auth/google/callback',passport.authenticate('google',failureRedirect)
+router.get('/auth/google/callback',passport.authenticate('google',failureRedirect))
