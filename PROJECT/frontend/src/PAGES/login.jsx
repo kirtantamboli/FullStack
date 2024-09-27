@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { userLogin } from '../redux/userSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import { FaGoogle, FaUser, FaLock } from 'react-icons/fa';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-
+import { useNavigate , useLocation } from 'react-router-dom';
 
 
 function Login() {
   const { handleSubmit, register, formState: { errors } } = useForm(); 
+  const {role} = useSelector((state)=>state.user)
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.pathname)
 
   const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(()=>{
+    if(role ==='user' && location.pathname !== '/' ){
+   navigate('/')
+    }
+     if(role==='admin' && location.pathname !== 'dashboard'){
+      navigate('/dashboard')
+    }
+
+  },[role,navigate,location.pathname])
+
 
   const onSubmit = (data) => {
     console.log(data);
@@ -74,7 +88,7 @@ function Login() {
       
         <button
           className="flex items-center justify-center mt-5 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-full"
-         
+         onClick={()=>window.location.href="http://localhost:3000/api/auth/google"}
         >
           <FaGoogle className="mr-2" />
           Login with Google
@@ -90,55 +104,3 @@ function Login() {
 }
 
 export default Login;
-// import React from 'react'
-// import { useForm } from 'react-hook-form'
-// import { useDispatch } from 'react-redux';
-// function Login() {
-// const {handleSubmit , register} = useForm() ;
-// const dispatch = useDispatch();
-
-// const onSubmit = (data) => {
-// console.log(data)
-
-// }
-//   return (
-//     <div>
-//     <div className="flex justify-center items-center min-h-screen">
-//       <div className="p-6 w-[25rem] shadow-lg rounded-md">
-//         <h1 className="text-black font-bold text-3xl text-center m-2">
-//         Login
-//         </h1>
-//         <form onSubmit={handleSubmit(onSubmit)}>
-        
-//           <label className="block" htmlFor="Email">
-//             Email
-//           </label>
-//           <input
-//             className="input_field"
-//             type="email"
-//             {...register('email')}
-//           />
-         
-//           <label className="block" htmlFor="Name">
-//             Password
-//           </label>
-//           <input
-//             className="input_field"
-//             type="password"
-//             {...register('password')}
-//           />
-         
-//           <button
-//             className="bg-black px-8 py-2 rounded-md w-full mt-3 text-white"
-//             type="submit"
-//           >
-//           Login
-//           </button>
-//         </form>
-//       </div>
-//     </div>
-//     </div>
-//   )
-// }
-
-// export default Login

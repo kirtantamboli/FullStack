@@ -6,11 +6,24 @@ const PORT = 3000;
 const colors = require('colors');
 require('dotenv').config()
 const cors = require('cors')
-require('/config/passportConfig')
-app.use(cors())
+const session = require('express-session') ;
 
-app.use(passport.initialize())
-app.use(passport.session())
+require('./config/passportConfig');
+
+app.use(cors()) ;
+app.use('/uploads' , express.static('uploads')) ;
+
+app.use(session({
+  secret: 'my-secret-string',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge : 1000 * 60 * 60 * 24 * 5
+  }
+}))
+
+app.use(passport.initialize());
+app.use(passport.session()) ;
 //NOTE fn to connect with the mongodb
 dbConnect();
 
@@ -21,6 +34,7 @@ app.use(express.json());
 app.use('/api', require('./routes/userRoutes'));
 app.use('/api',require('./routes/categoryRoutes'
 ))
+app.use('/api', require('./routes/productRoutes'))
 
 //NOTE GLOBAL ROUTES HANDLER (middleware)
 app.use((req, res, next) => {
@@ -35,4 +49,4 @@ app.use((req, res, next) => {
 //listening on the server
 app.listen(PORT, () => {
   console.log(colors.yellow(`App is listening on the port:${PORT}`));
-})
+});

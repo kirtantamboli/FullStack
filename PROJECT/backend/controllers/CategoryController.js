@@ -1,4 +1,4 @@
-const Category = require('../models/categoryModel') ;
+const Category = require('./../models/categoryModel') ;
 
 exports.createCategory = async(req,res,next)=>{
     try {
