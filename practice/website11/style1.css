@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+}
+.header{
+    display: flex;
+    background-color:yellowgreen;
+    height: 50px;
+    font-size: larger;
+    color:red;
+    font-style: italic;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+}
